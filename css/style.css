@@ -2,21 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    --primary-color: #1a365d;
-    /* Deep Elegant Blue */
-    --accent-color: #c5a059;
-    /* Muted Gold */
-    --bg-color: #fdfbf7;
-    /* Warm Cream */
-    --text-color: #2d3748;
-    /* Dark Gray */
-    --text-light: #718096;
-    /* Medium Gray */
-    --card-bg: #ffffff;
-    --border-radius: 12px;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --primary-color: #C5A059;
+    /* Gold */
+    --secondary-color: #1a1a1a;
+    --background-dark: #0f1215;
+    --card-bg: rgba(23, 28, 35, 0.7);
+    /* Translucent for glassmorphism */
+    --text-color: #e0e0e0;
+    --text-light: #a0a0a0;
+    --accent-color: #D4AF37;
+    --border-radius: 16px;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -26,9 +25,16 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--background-dark);
+    /* Background Image Setup */
+    background-image: linear-gradient(rgba(15, 18, 21, 0.85), rgba(15, 18, 21, 0.95)),
+        url('../img/tere13.jpg');
+    /* Using one of the uploaded photos */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-color);
+    font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -60,9 +66,10 @@ h3,
 /* Header / Hero */
 header {
     text-align: center;
-    padding: 6rem 2rem 4rem;
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.03) 0%, rgba(197, 160, 89, 0.1) 100%);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 6rem 1rem 4rem;
+    position: relative;
+    /* Subtle gradient for header separation */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
 }
 
 .hero-content {
@@ -72,19 +79,22 @@ header {
 
 .hero-subtitle {
     display: block;
-    color: var(--accent-color);
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 h1 {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-description {
@@ -123,12 +133,15 @@ section {
 
 /* Daily Phrase */
 .daily-phrase-container {
-    background-color: var(--card-bg);
-    padding: 3rem;
+    background: rgba(30, 35, 45, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
     border-radius: var(--border-radius);
     text-align: center;
     box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(197, 160, 89, 0.15);
     position: relative;
     margin-top: -3rem;
     /* Overlap with header */
@@ -158,26 +171,28 @@ section {
 
 /* Search Bar */
 .search-container {
-    margin-bottom: 2rem;
-    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    position: relative;
 }
 
 #search-input {
     width: 100%;
-    max-width: 500px;
-    padding: 1rem 1.5rem;
-    border: 2px solid rgba(0, 0, 0, 0.05);
+    padding: 1.2rem 2rem;
     border-radius: 50px;
-    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 1.1rem;
+    backdrop-filter: blur(5px);
     transition: all 0.3s ease;
-    background-color: white;
-    box-shadow: var(--shadow-sm);
 }
 
 #search-input:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
 }
 
 /* Glossary Grid */
@@ -190,9 +205,8 @@ section {
 /* Flip Card Styles */
 .phrase-card-container {
     background-color: transparent;
-    min-height: 250px;
-    /* Ensure fixed height for grid */
-    border-radius: var(--border-radius);
+    min-height: 280px;
+    perspective: 1000px;
     cursor: pointer;
 }
 
@@ -204,49 +218,55 @@ section {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.4s ease;
 }
 
 .phrase-card-front {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid rgba(197, 160, 89, 0.1);
+    /* Glass Effect */
+    background: rgba(30, 35, 45, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover glow effect */
+.phrase-card-container:hover .phrase-card-front {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+    transform: translateY(-5px);
 }
 
 .phrase-card-back {
     background-color: var(--accent-color);
-    color: white;
     transform: rotateY(180deg);
     padding: 0;
-    /* Full image */
     overflow: hidden;
-    /* Crop image to radius */
-}
-
-/* Hover effect on container to signal interactivity */
-.phrase-card-container:hover .phrase-card-front {
-    border-color: var(--accent-color);
-    box-shadow: var(--shadow-md);
+    border: 1px solid var(--primary-color);
 }
 
 /* Old styles adapted */
 .phrase-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: #fff;
+    /* White for better contrast on dark glass */
+    margin-bottom: 1rem;
     text-align: center;
+    line-height: 1.3;
 }
 
 .phrase-meaning {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-light);
+    /* Off-white */
     text-align: center;
+    font-weight: 300;
 }
 
 /* History Section */
