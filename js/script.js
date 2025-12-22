@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init components
     initDailyPhrase(phrases);
     initGlossary(phrases);
-    setupSearch(phrases);
+
 });
 
 function initDailyPhrase(phrases) {
@@ -121,20 +121,4 @@ function renderPhrases(items, container) {
     });
 }
 
-function setupSearch(phrases) {
-    const input = document.getElementById('search-input');
-    const grid = document.getElementById('phrases-grid');
 
-    if (!input || !grid) return;
-
-    input.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-
-        const filtered = phrases.filter(p =>
-            p.text.toLowerCase().includes(query) ||
-            (p.meaning && p.meaning.toLowerCase().includes(query))
-        );
-
-        renderPhrases(filtered, grid);
-    });
-}
