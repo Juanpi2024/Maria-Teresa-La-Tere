@@ -1,0 +1,264 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #1a365d; /* Deep Elegant Blue */
+    --accent-color: #c5a059; /* Muted Gold */
+    --bg-color: #fdfbf7; /* Warm Cream */
+    --text-color: #2d3748; /* Dark Gray */
+    --text-light: #718096; /* Medium Gray */
+    --card-bg: #ffffff;
+    --border-radius: 12px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Header / Hero */
+header {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.03) 0%, rgba(197, 160, 89, 0.1) 100%);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-subtitle {
+    display: block;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section Common */
+section {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Daily Phrase */
+.daily-phrase-container {
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    position: relative;
+    margin-top: -3rem; /* Overlap with header */
+    margin-bottom: 2rem;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+    margin-bottom: 1rem;
+    font-family: serif;
+}
+
+#daily-phrase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+#daily-phrase-meaning {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Search Bar */
+.search-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(0,0,0,0.05);
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* Glossary Grid */
+.phrases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.phrase-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.phrase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+.phrase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.phrase-meaning {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* History Section */
+.history-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.history-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Contact / Action */
+.contact-section {
+    background-color: rgba(26, 54, 93, 0.03);
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2c5282;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: white;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .daily-phrase-container {
+        padding: 2rem;
+        margin-top: 0;
+    }
+    
+    #daily-phrase-text {
+        font-size: 1.5rem;
+    }
+}
