@@ -165,7 +165,7 @@ const phrases = [
     { id: 160, text: "¿Y tú, estay operado?", meaning: "¿Por qué no ayudas? (como si estuviera convaleciente)." },
     { id: 161, text: "La zorrita", meaning: "Apodo o referencia." },
     { id: 162, text: "Hijo de la zunca", meaning: "Insulto suave o referencia." },
-    { id: 163, text: "Tú tenís de todo pu' cabrita", meaning: "Reconociendo que alguien está bien equipado." },
+    { id: 163, text: "Tú tenís de todo pu' cabrita", meaning: "Frase que le decía su padre, el Tata Teco, y ella recordaba siempre." },
     { id: 164, text: "Andái con la coronta pelá'", meaning: "Desequilibrio mental." },
     { id: 165, text: "Se botó", meaning: "Alguien que no se hace aseo o anda sucio." },
     { id: 166, text: "Me quedo flor flay", meaning: "Quedo excelente, listo." },
@@ -207,7 +207,8 @@ const phrases = [
     { id: 202, text: "Nadando en aceite vienen", meaning: "Comida grasosa." },
     { id: 203, text: "Andái sorriando", meaning: "Andas coqueteando o sonriendo falsamente." },
     { id: 204, text: "El sopita", meaning: "Alguien que no tiene iniciativa, flojo." },
-    { id: 205, text: "El María Luisa", meaning: "Un hombre con actitudes de mujer muy delicado." }
+    { id: 205, text: "El María Luisa", meaning: "Un hombre con actitudes de mujer muy delicado." },
+    { id: 206, text: "Puta que te peinai cabrita", meaning: "Frase de su padre, el Tata Teco, cuando la veía haciendo pan." }
 ];
 
 window.appData = { phrases: phrases };
