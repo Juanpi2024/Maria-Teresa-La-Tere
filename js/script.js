@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init components
     initDailyPhrase(phrases);
     initGlossary(phrases);
-
+    initRandomBackground();
 });
 
 function initDailyPhrase(phrases) {
@@ -122,3 +122,7 @@ function renderPhrases(items, container) {
 }
 
 
+function initRandomBackground() {
+    const randomImgNum = Math.floor(Math.random() * 26) + 1;
+    document.body.style.backgroundImage = `linear-gradient(rgba(15, 18, 21, 0.85), rgba(15, 18, 21, 0.95)), url('img/tere${randomImgNum}.jpg')`;
+}
