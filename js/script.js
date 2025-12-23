@@ -97,8 +97,8 @@ function renderPhrases(items, container) {
         const cardBack = document.createElement('div');
         cardBack.className = 'phrase-card-back';
 
-        // Random image selection (1 to 22)
-        const randomImgNum = Math.floor(Math.random() * 22) + 1;
+        // Random image selection (1 to 26)
+        const randomImgNum = Math.floor(Math.random() * 26) + 1;
 
         const img = document.createElement('img');
         img.src = `img/tere${randomImgNum}.jpg`;
